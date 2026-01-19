@@ -439,8 +439,19 @@ const UI = {
 
     // 4) Manches 1..4 : tirage gagnant (ton comportement actuel)
     const roundWinner = Math.random() < 0.75 ? ranking[0] : (ranking[1] || ranking[0]);
-    const event = GameState.database[roundWinner].shift();
-    const winner = roundWinner;
+
+    // --- MODIFICATION ICI ---
+    // On filtre pour ne garder que les tuiles qui n'ont pas isFinal: true
+    const eventDispo = GameState.database[roundWinner].filter(e => !e.isFinal);
+
+    // On choisit un index aléatoire dans ce pool filtré
+    const randomIndex = Math.floor(Math.random() * eventDispo.length);
+    const event = eventDispo[randomIndex];
+
+    // Optionnel : Si vous voulez retirer cette tuile de la base de données pour ne plus la piocher
+    const realIndex = GameState.database[roundWinner].indexOf(event);
+    GameState.database[roundWinner].splice(realIndex, 1);
+    // -------------------------
 
     // Cibles
     const pupilLayer = document.getElementById('eye-pupils-layer');
