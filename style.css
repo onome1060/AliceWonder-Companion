@@ -90,6 +90,8 @@ body {
       "content"
       "btn-footer";
   min-height: 100dvh;
+
+  touch-action: manipulation;
 }
 
 .dynamic-area {
