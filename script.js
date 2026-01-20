@@ -257,6 +257,7 @@ const UI = {
     this.renderRound();
   },
 
+  // !!!!!!!!!!!!! inutilisé pour le moment !!!!!!!!!!!!!
   renderVictory() {
     const ranking = getRanking();
     document.getElementById('classement-final').innerHTML = ranking
@@ -273,16 +274,8 @@ const UI = {
     const playerName = GameState.players[firstIdx];
     const activeColor = getActiveColor(playerName);
 
-    // StartingPlayerDisplay.innerHTML = `
-    //   <p>
-    //     C'est à 
-    //     <span style="color: ${activeColor}; text-shadow: 0 0 5px rgba(0,0,0,0.1);">
-    //       ${playerName.toUpperCase()}
-    //     </span> 
-    //     de débuter la manche.
-    //   </p>
-    // `;
-        StartingPlayerDisplay.innerHTML = `
+    StartingPlayerDisplay.innerHTML = 
+      `
       <p>
         <span style="color: ${activeColor};"; text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);">
           ${playerName.toUpperCase()}
@@ -290,7 +283,7 @@ const UI = {
         <br>
         débute la manche
       </p>
-    `;
+      `;
 
     StartingPlayerDisplay.style.display = "block";
     currentRoundDisplay.style.display = "block";
@@ -381,6 +374,7 @@ const UI = {
       });
 
       container.appendChild(clone);
+
     });
 
     this.updateMainButtonUI();
@@ -394,26 +388,16 @@ const UI = {
 
     const activeColor = getActiveColor(emo);
 
-    //   GameState.currentEventHTML = `
-    //   <div class="event-result-box">
-    //     <div class="event-card">
-    //       <div class="event-description narrative-note">"${event.description}"</div>
-    //       <div class="event-title" style="color: ${activeColor}">${event.title}</div>
-    //       <img src="assets/section-split-bar.png" alt="" class="section-split-bar">
-    //       <div class="event-mechanics">${event.mechanic.description}</div>
-    //     </div>
-    //   </div>
-    // `;
-        GameState.currentEventHTML = `
-        <div class="event-result-box">
-          <div class="event-card">
-            <div class="event-title" style="color: ${activeColor}">${event.title}</div>
-            <div class="event-description narrative-note">${event.description}</div>
-            <img src="assets/section-split-bar.png" alt="" class="section-split-bar">
-            <div class="event-mechanics">${event.mechanic.description}</div>
-          </div>
+    GameState.currentEventHTML = `
+      <div class="event-result-box">
+        <div class="event-card">
+          <div class="event-title" style="color: ${activeColor}">${event.title}</div>
+          <div class="event-description narrative-note">${event.description}</div>
+          <img src="assets/section-split-bar.png" alt="" class="section-split-bar">
+          <div class="event-mechanics">${event.mechanic.description}</div>
         </div>
-      `;
+      </div>
+    `;
 
     displayZone.innerHTML = GameState.currentEventHTML;
     this.updateMainButtonUI();
@@ -423,6 +407,7 @@ const UI = {
      EVENT TRANSITION (ROULETTE)
      ========================================= */
   startEventTransition() {
+
     // 1) Appliquer les scores temp
     commitTempScores();
 
@@ -437,21 +422,22 @@ const UI = {
       return;
     }
 
-    // 4) Manches 1..4 : tirage gagnant (ton comportement actuel)
+    // 4) Manches 1..4 : tirage gagnant
     const roundWinner = Math.random() < 0.75 ? ranking[0] : (ranking[1] || ranking[0]);
 
-        // --- MODIFICATION ICI ---
-    // On filtre pour ne garder que les tuiles qui n'ont pas isFinal: true
+    // On génère un nombre entre 0 et 1
+    const chance = Math.random(); 
+
+    // On filtre pour ne garder que les event qui n'ont pas isFinal: true
     const eventDispo = GameState.database[roundWinner].filter(e => !e.isFinal);
 
     // On choisit un index aléatoire dans ce pool filtré
     const randomIndex = Math.floor(Math.random() * eventDispo.length);
     const event = eventDispo[randomIndex];
 
-    // Optionnel : Si vous voulez retirer cette tuile de la base de données pour ne plus la piocher
+    // On retire l'event de la base de données pour ne plus le tirer
     const realIndex = GameState.database[roundWinner].indexOf(event);
     GameState.database[roundWinner].splice(realIndex, 1);
-    // -------------------------
 
     const winner = roundWinner;
 
