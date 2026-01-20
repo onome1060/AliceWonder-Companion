@@ -324,9 +324,12 @@ const UI = {
       const updateScoreBadge = () => {
         const newTotal = baseTotal + GameState.tempScores[emo];
         badge.innerText = newTotal;
-
-        // (comportement original)
-        if (newTotal < 0) badge.style.color = "#ff4d4d";
+  
+        if (newTotal < 0) {
+          badge.style.color = "#ff4d4d";
+        } else {
+          badge.style.color = "#ffffffff";
+        }
       };
 
       updateScoreBadge();
