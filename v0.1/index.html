@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compagnon de Jeu - Émotions</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="home-screen" class="screen">
+        <div class="floating-container">
+            <div class="floating-rune f-rage"></div>
+            <div class="floating-rune f-extase"></div>
+            <div class="floating-rune f-melancolie"></div>
+            <div class="floating-rune f-angoisse"></div>
+        </div>
+
+        <h1>Alice's Wonder</h1>
+        <button id="btn-new-game">Nouvelle Partie</button>
+    </div>
+
+    <div id="player-count-screen" class="screen hidden">
+        <h2>Nombre de joueurs</h2>
+        <p>Bienvenue chères émotions, combien êtes vous ?</p>
+        <button class="btn-select-count" data-count="2">2 Joueurs</button>
+        <button class="btn-select-count" data-count="3">3 Joueurs</button>
+        <button class="btn-select-count" data-count="4">4 Joueurs</button>
+    </div>
+
+    <div id="setup-emotions-screen" class="screen hidden">
+        <h2>Quelles émotions allez vous incarnez ?</h2>
+        <p>Indiquez les émotions selon le sens horaire, le Joueur 1 est le joueur ayant le plus de vettements colorés.</p>
+        <div id="players-setup-list"></div>
+        <button id="btn-start-game">Commencer la Manche 1</button>
+    </div>
+
+    <div id="round-screen" class="screen hidden">
+        <h2 id="round-title">Manche 1</h2>
+        
+        <div id="live-scoreboard" class="scoreboard-container"></div>
+
+        <div id="first-player-info"></div>
+
+        <div id="active-event-display" class="event-box hidden">
+            <strong>ÉVÉNEMENT ACTIF :</strong>
+            <p id="event-text"></p>
+        </div>
+
+        <h3>Points marqués cette manche :</h3>
+        <div id="score-inputs"></div>
+        
+        <button id="btn-validate-round">Valider les scores</button>
+    </div>
+
+    <div id="event-screen" class="screen hidden">
+        <h2>Calcul du Destin</h2>
+        <div id="probabilites-display"></div>
+        <button id="btn-draw-event">Lancer le tirage</button>
+        
+        <div id="resultat-tirage" class="hidden">
+            <div id="gagnant-annonce"></div>
+            <button id="btn-next-round">Passer à la manche suivante</button>
+        </div>
+    </div>
+
+    <div id="victory-screen" class="screen hidden">
+        <h1>Classement Final</h1>
+        <div id="classement-final"></div>
+        <button id="btn-restart">Nouvelle Partie</button>
+    </div>
+
+</body>
+</html>

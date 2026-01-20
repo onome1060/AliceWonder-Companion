@@ -1,0 +1,110 @@
+{
+  "rage": [
+    {
+      "title": "Excès autodestructeur",
+      "mechanic": "Alice détruit la tuile sur laquelle elle se trouve puis se déplace aléatoirement.",
+      "description": "La haine de soi est souvent le premier carburant de la colère. Une essence volatile qui a poussé Alice à se blesser plus d’une fois."
+    },
+    {
+      "title": "Escalade violente",
+      "mechanic": "Pendant la prochaine manche, chaque joueur peut détruire une tuile pour la remplacer par une tuile qu’il pose. Chaque fois que cette action se résout, Alice rejoint la tuile nouvellement placée.",
+      "description": "Alice n’est pas étrangère au goût du sang. Son sang ou celui d’autrui, un élixir qui pousse à la surenchère permanente, jusqu’à l’horreur définitive."
+    },
+    {
+      "title": "Effondrement cathartique",
+      "mechanic": "Alice détruit toutes les tuiles au bord du plateau et revient sur la case centrale.",
+      "description": "Impuissante face aux destructions passées, Alice réclame désormais son contrôle au travers de cette même violence. Ce qui est brisé de sa main ne pourra plus l’être par celle de l’Extérieur."
+    },
+    {
+      "title": "Impulsion furieuse",
+      "mechanic": "Alice se déplace aléatoirement (direction de 1 à 4) deux fois. Ensuite, le joueur avec le moins de point peut détruire une tuile adjacente à elle. (En cas d’égalité c’est le joueur qui jouera le plus tard lors de la manche suivante qui prend le choix)",
+      "description": "Le sang appelle le sang, l’injuste appelle l’abjecte. Les éclats les plus marquant sont toujours les plus isolés."
+    },
+    {
+      "title": "Colère confuse",
+      "mechanic": "Alice se déplace aléatoirement. Chaque joueur doit jeter une de ses tuiles humeurs encore en réserve dans le sachet de tuiles.",
+      "description": "Lorsqu’elle gronde à son paroxysme, la Rage perd parfois toute substance. Il ne reste alors qu’un sentiment qui dévore son hôte de l’intérieur."
+    }
+  ],
+  "extase": [
+    {
+      "title": "Sursaut joyeux",
+      "mechanic": "Alice se déplace aléatoirement et pose un jeton bonus sur la case où elle arrive. (une valeur négative augmentée reste négative / Une tuile d’infusion augmentée rapporte autant de point à son ou ses humeurs. / Ce bonus est représenté par un petit jeton)",
+      "description": "Le simple souvenir de ce sourire et voilà qu’Alice en esquisse un elle aussi."
+    },
+    {
+      "title": "Euphorie vivifiante",
+      "mechanic": "Alice se déplace aléatoirement 4 fois. Chaque case parcourue par Alice et celle où elle s’arrête gagne 1 jeton bonus.",
+      "description": "Et si au final les songes du passés n’avait pas d’importance, au fond, n’est ce pas excitant d’imaginer qu’on peut repartir d’une page blanche ?"
+    },
+    {
+      "title": "Réalisation affranchie",
+      "mechanic": "En commençant par le joueur plus faible dans l’ordre du tour, chaque joueur disposant encore d’au moins une tuile humeur spéciale dans sa réserve doit immédiatement en poser une.",
+      "description": "Alice n’a jusqu’à présent vécu qu’au travers de limites, ses limites. Des barrières artificielles dont elle peut, d’une pensée, décider de s’affranchir."
+    },
+    {
+      "title": "Inspiration formidable",
+      "mechanic": "Durant la prochaine manche, chaque joueur peut poser une tuile spéciale en plus des deux tuiles qu’il a choisi dans la réserve commune.",
+      "description": "Alice n’a pas besoin de force pour surmonter ses maux, mais d’une simple idée. C’est là toute la puissance de son art."
+    },
+    {
+      "title": "Allégresse partagée",
+      "mechanic": "Chaque joueur peut poser une tuile présente dans la réserve commune immédiatement en commençant par le joueur actif. Alice se déplace sur la dernière tuile posée et la réserve est remélangée puis restituée.",
+      "description": "Autour d’elle, sa création s’embrase de ses sentiments. Alice leur partage ses maux mais elle peut aussi choisir de leur infuser son énergie."
+    }
+  ],
+  "melancolie": [
+    {
+      "title": "Flétrissement de Wonder",
+      "mechanic": "Les tuiles adjacentes à Alice sont tournées face cachée. Elle se déplace aléatoirement ensuite.",
+      "description": "Tandis que sa passion s’éteint, c’est toute son œuvre, Wonder, qui fane avec Alice."
+    },
+    {
+      "title": "Avenir incertain",
+      "mechanic": "Remélangez la réserve neutre pour y poser des tuiles face cachée à la place. Pour le reste de la manche les tuiles dans la réserve neutre sont toujours posées face caché. Avant de tirer le prochain évènement, révélez-les.",
+      "description": "Combien d’autres disparaitront par elle, pour elle ? Et si ces questions demeuraient éternellement sans réponse ?"
+    },
+    {
+      "title": "Acédie",
+      "mechanic": "Remélangez la réserve neutre pour y poser une seule tuile par emplacement. Chaque fois que la réserve neutre est restituée pendant cette manche n’y mettez qu’une seule tuile. Les joueurs ne peuvent pas poser plus d’une tuile durant cette manche. Restituez normalement la réserve neutre avant de tirer le prochain évènement.",
+      "description": "La douceur de l’immobilisme. Un cocon de sécurité et de stabilité. Un sommeil dans lequel il parait si facile de sombrer…"
+    },
+    {
+      "title": "Repli sur soi",
+      "mechanic": "Alice retourne au centre du plateau et retourne la tuile centrale face cachée. Ensuite, si elle ne s’est pas déplacée pour revenir au centre du plateau elle se déplace aléatoirement.",
+      "description": "Frey, Vulbis, Afstir… À quoi bon retenir ces noms quand la solitude est si simple."
+    },
+    {
+      "title": "Déliquescence",
+      "mechanic": "Durant la prochaine manche, chaque joueur peut choisir de retourner une tuile et de poser une tuile comme action du tour.",
+      "description": "Sous l’œil épuisé d’Alice, le paysage de Wonder fond en une masse uniforme et grise. Un automne du monde et de l’âme."
+    }
+  ],
+  "angoisse": [
+    {
+      "title": "Mouvement de panique",
+      "mechanic": "Alice se déplace aléatoirement 3 fois. Ensuite elle pioche une tuile aléatoirement à mettre sous elle (en remplaçant si besoin la tuile sous elle qui est défaussée dans la pioche). Le joueur le plus faible oriente la nouvelle tuile.",
+      "description": "Et si un autre cataclysme attendait là, tapi dans la brume nébuleuse du Destin ? Voilà une pensée qui gardera Alice en alerte."
+    },
+    {
+      "title": "Peur de la séparation",
+      "mechanic": "Alice se déplace avec la tuile sous elle aléatoirement. (Échangeant la place de deux tuiles si besoin mais sans changer leur orientation)",
+      "description": "Peut-elle seulement s’empêcher de les poursuivre ? Cette course est à sens unique pour Alice."
+    },
+    {
+      "title": "Avalanche de possibles",
+      "mechanic": "Durant cette manche, chaque joueur peut remélanger un des emplacements de la réserve neutre et le restituer avant de jouer.",
+      "description": "Peut-être faudrait-il s’hâter de retrouver Frey, ou bien se concentrer sur sa nouvelle œuvre ou alors est-ce dans le vaste Extérieur qu’Alice devrait trouver une voie ?"
+    },
+    {
+      "title": "Indécision nerveuse",
+      "mechanic": "Alice se déplace aléatoirement 2 fois. Alice détruit la tuile sur laquelle elle arrive et le joueur le plus faible doit ensuite replacer la tuile détruite.",
+      "description": "Choisir revient à renoncer. Alors, Alice tisse et détisse, inlassablement, jusqu’à ce que sa dernière œuvre soit là où elle doit être."
+    },
+    {
+      "title": "Sursaut",
+      "mechanic": "Chaque joueur DOIT poser une tuile piochée aléatoirement dans l’ordre du tour.",
+      "description": "Le perfectionnisme est l’obstacle de tout artiste. Mais Alice n’a plus ce luxe, son œuvre est sa vie."
+    }
+  ]
+}

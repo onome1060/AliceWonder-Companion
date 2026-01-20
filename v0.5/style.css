@@ -1,0 +1,256 @@
+:root {
+    --couleur-principale: #3498db;
+    --espacement-large: 20px;
+    /*fonts rules*/
+    --font-H1-familly: "Hellghost Rough"; 
+    --font-H2-familly: "IM Fell English SC";
+    --font-body-familly: "IM Fell English", serif;
+    --font-btn-familly: "IM Fell English", serif;
+    --font-H1-size :24px;
+    --font-H2-size :24px;
+    --font-body-size :24px;
+    --font-btn-size :24px;
+}
+@font-face { font-family: Unutterable; src: url(assets/fonts/Unutterable-Regular.woff); }
+/* source : https://ggbot.itch.io/unutterable-font */
+@font-face {
+    font-family: "Hellghost Rough";
+    src: url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.eot");
+    src: url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.svg#Hellghost Rough")format("svg");
+/*font payante (moyen de filou) https://alitdesign.net/product/hellghost-typeface/ */
+}
+body {
+    background: url("/assets/texture_seamless.png") repeat fixed center / 400px;
+    color: #eee;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.screen {
+    background: #0e0e0e;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* --- BASE --- */
+body {
+    font-family: var(--font-body-familly);
+    background: url("/assets/texture_seamless.png") repeat fixed center / 400px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+h1{
+    font-family: var(--font-H1-familly);
+}
+h2{
+    font-family: var(--font-H2-familly);
+}
+p{
+    font-family: var(--font-body-familly);
+}
+
+
+.screen {
+    position: relative;
+    background: #0e0e0e;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.hidden { display: none; }
+
+button {
+    width: 100%;
+    padding: 15px;
+    /* margin: 10px 0; */
+    border: none;
+    border-radius: 8px;
+    background: #ffffff00;
+    color: white;
+    font-family: var(--font-btn-familly);
+    font-size: var(--font-btn-size);
+    font-weight: bold;
+    cursor: pointer;
+
+    border: 25px solid transparent;
+    border-image: url('assets/box.png') 33% round ;
+}
+
+/* --- SÉLECTION DES ÉMOTIONS --- */
+.player-setup-row { 
+    margin-bottom: 20px; 
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 10px; }
+.emotion-choices { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; }
+.emotion-choice-card {
+    background: rgba(0, 0, 0, 0); 
+    padding: 10px; 
+    border-radius: 360px; 
+    border: 2px solid #dddddd00;
+    cursor: pointer; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    transition: 0.2s;
+}
+.emotion-choice-card img { 
+    width: 50px; 
+    height: 50px; 
+    padding: 1px;
+}
+.emotion-choice-card.selected { 
+    border-color: #ffffff00; 
+    background-color: #00000000; 
+    transform: scale(1.6); 
+}
+.emotion-choice-card.disabled { 
+    opacity: 0.2; 
+    filter: grayscale(100%); 
+    cursor: not-allowed; 
+}
+
+/* --- COMPTEURS (STEPPERS) --- */
+.score-stepper { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px; 
+    margin: 15px 0;
+}
+.rune-badge-container { 
+    position: relative; 
+}
+.rune-image-place img { 
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    /* border: 2px solid white;  */
+    object-fit: cover; }
+.score-badge {
+    position: absolute; 
+    top: -5px; right: -5px; 
+    background: #000000; color: white;
+    border-radius: 50%; 
+    width: 25px; 
+    height: 25px; 
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; 
+    font-family: var(--font-H1-familly);
+    font-size: 18px;
+    border: 2px solid white;
+}
+.arrow-button { 
+    background: #2dabff00; 
+    border: none; 
+    width: 40px; 
+    height: 40px; 
+    cursor: pointer; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow-button img {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* -------------------------------------------- */
+/* Container de l'image et du score total */
+.stepper-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px; /* Espace constant pour l'alignement */
+}
+
+.stepper-info img {
+    width: 50px;
+    height: 50px;
+}
+
+.total-score-label {
+    font-size: 0.8rem;
+    font-family: 'IM Fell English', serif;
+    color: #aaa;
+    margin-top: 2px;
+}
+
+/* Ajustement du badge de manche pour qu'il ne cache pas tout */
+.score-badge {
+    background: #500; /* Une couleur différente pour bien distinguer */
+    border: 1px solid white;
+}
+/* -------------------------------------------- */
+
+/* --- L'OEIL PERMANENT --- */
+#main-eye-container {
+    position: relative;
+    width: 250px; /* Taille ajustable selon tes besoins */
+    height: 250px;
+    margin: 10px auto;
+}
+
+#eye-base, #eye-color-overlay, #eye-pupils-layer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+#eye-base { z-index: 1; }
+#eye-color-overlay { z-index: 2; }
+#eye-pupils-layer { z-index: 3; }
+
+.pupil-rune {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pupil-rune img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+}
+
+/* --- UI SCORE ET EVENTS (Réutilisé de ton code) --- */
+.score-stepper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 10px 0; }
+.rune-badge-container { position: relative; }
+.rune-image-place img { width: 60px; height: 60px; }
+.score-badge {
+    position: absolute; top: -5px; right: -5px;
+    background: #000; color: #fff; border: 2px solid #fff;
+    border-radius: 50%; width: 22px; height: 22px;
+    font-size: 14px; display: flex; align-items: center; justify-content: center;
+}
+.arrow-button img { width: 30px; height: 30px; }
+
+.event-result-box {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}

@@ -1,0 +1,195 @@
+@font-face { font-family: Unutterable; src: url(assets/fonts/Unutterable-Regular.woff); }
+/* source : https://ggbot.itch.io/unutterable-font */
+
+
+
+
+@font-face {
+    font-family: "Hellghost Rough";
+    src: url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.eot");
+    src: url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.svg#Hellghost Rough")format("svg");
+}
+
+:root {
+    --couleur-principale: #3498db;
+    --espacement-large: 20px;
+    --font-H1: "Hellghost Rough"; 
+    /* https://alitdesign.net/product/hellghost-typeface/
+     https://www.onlinewebfonts.com/download/974927adf453da2b7246dca35d6f21a4 */
+    --font-H2: "IM Fell English SC";
+    --font-body: "IM Fell English", serif;
+}
+
+
+h1{
+    font-family: var(--font-H1);
+}
+h2{
+    font-family: var(--font-H2);
+}
+p{
+    font-family: var(--font-body);
+}
+
+body {
+    /* font-family: var(--font-H1); */
+    background-color: #2c3e50;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.screen {
+    background: #ecf0f1;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hidden { display: none; }
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: #2980b9;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Scoreboard en haut de manche */
+.scoreboard-container {
+    display: flex;
+    justify-content: space-around;
+    background: #34495e;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.scoreboard-item { display: flex; flex-direction: column; align-items: center; }
+.scoreboard-score { font-size: 1.2rem; font-weight: bold; }
+.scoreboard-label { font-size: 0.7rem; opacity: 0.8; }
+
+/* Stepper (flèches + rune) */
+.score-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.rune-badge-container { position: relative; }
+
+.rune-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.score-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e74c3c;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.arrow-button {
+    background: #bdc3c7;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.event-box {
+    background: #f1c40f;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 2px dashed #d35400;
+}
+
+/* Couleurs bordures */
+.rage { border-color: #e74c3c; }
+.extase { border-color: #f1c40f; }
+.melancolie { border-color: #3498db; }
+.angoisse { border-color: #9b59b6; }
+
+
+/* Conteneur pour limiter les runes à l'écran d'accueil */
+.floating-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Les runes passent derrière le texte et le bouton */
+    pointer-events: none; /* Empêche les runes de bloquer les clics sur le bouton */
+}
+
+/* Style de base des runes flottantes */
+.floating-rune {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    opacity: 0.4; /* On les met un peu transparentes pour ne pas gêner la lecture */
+    border-radius: 50%;
+}
+
+/* On utilise tes placeholders ou futures images */
+.f-rage { top: 10%; left: 15%; background-image: url('https://via.placeholder.com/80?text=R'); animation: float 8s ease-in-out infinite; }
+.f-extase { top: 20%; left: 70%; background-image: url('https://via.placeholder.com/80?text=E'); animation: float 12s ease-in-out infinite; animation-delay: 1s; }
+.f-melancolie { top: 60%; left: 10%; background-image: url('https://via.placeholder.com/80?text=M'); animation: float 10s ease-in-out infinite; animation-delay: 2s; }
+.f-angoisse { top: 75%; left: 65%; background-image: url('https://via.placeholder.com/80?text=A'); animation: float 14s ease-in-out infinite; animation-delay: 0.5s; }
+
+/* L'animation de flottement */
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(15px, -25px) rotate(10deg);
+    }
+    66% {
+        transform: translate(-10px, 15px) rotate(-10deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+/* Assure-toi que l'écran d'accueil est en position relative pour que les runes restent dedans */
+#home-screen {
+    position: relative;
+    overflow: hidden;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice's Wonder - Compagnon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script2.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="home-screen" class="screen">
+        <h1>Alice's Wonder</h1>
+        <button id="btn-new-game">Nouvelle Partie</button>
+    </div>
+
+    <div id="player-count-screen" class="screen hidden">
+        <h2>Nombre de joueurs</h2>
+        <button class="btn-select-count" data-count="3">3 Joueurs</button>
+        <button class="btn-select-count" data-count="4">4 Joueurs</button>
+    </div>
+
+    <div id="setup-emotions-screen" class="screen hidden">
+        <h2>Qui incarnez-vous ?</h2>
+        <div id="players-setup-list"></div>
+        <button id="btn-start-game">Commencer la Partie</button>
+    </div>
+
+    <div id="round-screen" class="screen hidden">
+        <h2 id="round-title">Manche 1</h2>
+
+        <div id="main-eye-container">
+            <img id="eye-base" src="assets/eye.png" alt="Oeil Neutre">
+            <img id="eye-color-overlay" src="" alt="" style="opacity: 0;">
+            <div id="eye-pupils-layer">
+                <div class="pupil-rune neutral" id="pupil-neutral">
+                    <img src="assets/eye-pupil_neutre.png">
+                </div>
+            </div>
+        </div>
+
+        <div id="first-player-info"></div>
+
+        <div id="dynamic-content-zone"></div>
+
+        <div id="action-zone">
+            <button id="btn-main-action">Valider les scores</button>
+        </div>
+    </div>
+
+    <div id="victory-screen" class="screen hidden">
+        <h1>Podium Final</h1>
+        <div id="classement-final"></div>
+        <button id="btn-restart">Rejouer</button>
+    </div>
+
+    <template id="stepper-template">
+        <div class="score-stepper">
+            <button class="arrow-button btn-minus"><img src="assets/arrow_L.png" alt="-"></button>
+            <div class="rune-badge-container">
+                <div class="rune-image-place"></div> 
+                <div class="score-badge">0</div>
+            </div>
+            <button class="arrow-button btn-plus"><img src="assets/arrow_R.png" alt="+"></button>
+        </div>
+    </template>
+
+</body>
+</html>
