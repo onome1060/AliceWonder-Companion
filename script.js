@@ -109,7 +109,7 @@ const GameState = {
   scores: {},
   tempScores: {},
 
-  round: 4,
+  round: 1,
 
   lastWinner: null,
   lastEvent: null,
