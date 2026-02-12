@@ -3,56 +3,41 @@
     {
       "title": "Excès autodestructeur",
       "mechanic": {
-          "description": "Alice détruit la tuile où elle se trouve, puis se déplace de <span class='number'>1</span> tuile.",
-          "movement": {
-              "bool": true,
-              "number":1
-          }
+        "description": "Alice détruit la tuile où elle se trouve, puis se déplace de <span class='number'>1</span> tuile.",
+        "movement": 1
       },
       "description": "La haine de soi est souvent le premier carburant de la colère. Une essence volatile qui a poussé Alice à se blesser plus d’une fois."
     },
     {
       "title": "Escalade violente",
       "mechanic": {
-          "description": "À votre tour, vous pouvez détruire une tuile pour la remplacer par l'une des vôtres ; Alice rejoint alors cette tuile.",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
+        "description": "À votre tour, vous pouvez détruire une tuile pour la remplacer par l'une des vôtres ; Alice rejoint alors cette tuile.",
+        "movement": 0
       },
       "description": "Alice n’est pas étrangère au goût du sang. Son sang ou celui d’autrui, un élixir qui pousse à la surenchère permanente, jusqu’à l’horreur définitive."
     },
     {
       "title": "Effondrement cathartique",
       "mechanic": {
-          "description": "Alice détruit toutes les tuiles en bordure du plateau, puis rejoint la tuile centrale.",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
-      },      
+        "description": "Alice détruit toutes les tuiles en bordure du plateau, puis rejoint la tuile centrale.",
+        "movement": 0
+      },
       "description": "Impuissante face aux destructions passées, Alice réclame désormais son contrôle au travers de cette même violence. Ce qui est brisé de sa main ne pourra plus l’être par celle de l’Extérieur."
     },
     {
       "title": "Impulsion furieuse",
       "mechanic": {
-          "description": "Alice se déplace de <span class='number'>2</span> tuiles, puis le joueur ayant le moins de points peut détruire une tuile adjacente à Alice.",
-          "movement": {
-              "bool": true,
-              "number":2
-          }
+        "description": "Alice se déplace de <span class='number'>2</span> tuiles, puis le joueur ayant le moins de points peut détruire une tuile adjacente à Alice.",
+        "movement": 2
       },
       "description": "Le sang appelle le sang, l’injuste appelle l’abjecte. Les éclats les plus marquant sont toujours les plus isolés."
     },
     {
       "title": "Colère confuse",
       "mechanic": {
-          "description": "Alice se déplace de <span class='number'>1</span> tuile, puis chaque joueur doit se défausser d’une tuile humeur.",
-          "movement": {
-              "bool": true,
-              "number":1
-          }
-      },      
+        "description": "Alice se déplace de <span class='number'>1</span> tuile, puis chaque joueur doit se défausser d’une tuile humeur.",
+        "movement": 1
+      },
       "description": "Lorsqu’elle gronde à son paroxysme, la Rage perd parfois toute substance. Il ne reste alors qu’un sentiment qui dévore son hôte de l’intérieur."
     },
     {
@@ -65,55 +50,40 @@
     {
       "title": "Sursaut joyeux",
       "mechanic": {
-          "description": "Alice se déplace de <span class='number'>1</span> tuile ; placez <span class='number'>1</span> jeton bonus sur sa tuile d'arrivée.",
-          "movement": {
-              "bool": true,
-              "number":1
-          }
-      },      
+        "description": "Alice se déplace de <span class='number'>1</span> tuile ; placez <span class='number'>1</span> jeton bonus sur sa tuile d'arrivée.",
+        "movement": 1
+      },
       "description": "Le simple souvenir de ce sourire et voilà qu’Alice en esquisse un elle aussi."
     },
     {
       "title": "Euphorie vivifiante",
       "mechanic": {
-          "description": "Alice se déplace de <span class='number'>4</span> tuiles ; placez <span class='number'>1</span> jeton bonus sur sa tuile d’arrivée et sur chaque tuile traversée.",
-          "movement": {
-              "bool": true,
-              "number":4
-          }
+        "description": "Alice se déplace de <span class='number'>4</span> tuiles ; placez <span class='number'>1</span> jeton bonus sur sa tuile d’arrivée et sur chaque tuile traversée.",
+        "movement": 4
       },
       "description": "Et si au final les songes du passés n’avait pas d’importance, au fond, n’est ce pas excitant d’imaginer qu’on peut repartir d’une page blanche ?"
     },
     {
       "title": "Réalisation affranchie",
       "mechanic": {
-          "description": "Chaque joueur possédant au moins <span class='number'>1</span> tuile humeur doit en poser une immédiatement, en commençant par le dernier au score.",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
+        "description": "Chaque joueur possédant au moins <span class='number'>1</span> tuile humeur doit en poser une immédiatement, en commençant par le dernier au score.",
+        "movement": 0
       },
       "description": "Alice n’a jusqu’à présent vécu qu’au travers de limites, ses limites. Des barrières artificielles dont elle peut, d’une pensée, décider de s’affranchir."
     },
     {
       "title": "Inspiration formidable",
       "mechanic": {
-          "description": "Chaque joueur peut poser <span class='number'>1</span> tuile humeur supplémentaire, en plus des <span class='number'>2</span> tuiles choisies dans la réserve.",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
+        "description": "Chaque joueur peut poser <span class='number'>1</span> tuile humeur supplémentaire, en plus des <span class='number'>2</span> tuiles choisies dans la réserve.",
+        "movement": 0
       },
       "description": "Alice n’a pas besoin de force pour surmonter ses maux, mais d’une simple idée. C’est là toute la puissance de son art."
     },
     {
       "title": "Allégresse partagée",
       "mechanic": {
-          "description": "Chaque joueur peut poser <span class='number'>1</span> tuile (ordre du tour) : Alice rejoint la dernière tuile posée et la réserve est ensuite mélangée.",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
+        "description": "Chaque joueur peut poser <span class='number'>1</span> tuile (ordre du tour) : Alice rejoint la dernière tuile posée et la réserve est ensuite mélangée.",
+        "movement": 0
       },
       "description": "Autour d’elle, sa création s’embrase de ses sentiments. Alice leur partage ses maux mais elle peut aussi choisir de leur infuser son énergie."
     },
@@ -127,55 +97,40 @@
     {
       "title": "Flétrissement de Wonder",
       "mechanic": {
-          "description": "Les tuiles adjacentes à Alice sont tournées face cachée, puis elle se déplace de <span class='number'>1</span> tuile.",
-          "movement": {
-              "bool": true,
-              "number":1
-          }
+        "description": "Les tuiles adjacentes à Alice sont tournées face cachée, puis elle se déplace de <span class='number'>1</span> tuile.",
+        "movement": 1
       },
       "description": "Tandis que sa passion s’éteint, c’est toute son œuvre, Wonder, qui fane avec Alice."
     },
     {
       "title": "Avenir incertain",
       "mechanic": {
-          "description": "Posez les tuiles de la réserve face cachée pour le reste de la manche ; révélez-les avant de tirer le prochain événement.",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
+        "description": "Posez les tuiles de la réserve face cachée pour le reste de la manche ; révélez-les avant de tirer le prochain événement.",
+        "movement": 0
       },
       "description": "Combien d’autres disparaitront par elle, pour elle ? Et si ces questions demeuraient éternellement sans réponse ?"
     },
     {
       "title": "Acédie",
       "mechanic": {
-          "description": "Cette manche, la réserve et la pose sont limitées à <span class='number'>1</span> seule tuile ; restituez la réserve normalement avant le prochain événement.",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
+        "description": "Cette manche, la réserve et la pose sont limitées à <span class='number'>1</span> seule tuile ; restituez la réserve normalement avant le prochain événement.",
+        "movement": 0
       },
       "description": "La douceur de l’immobilisme. Un cocon de sécurité et de stabilité. Un sommeil dans lequel il parait si facile de sombrer…"
     },
     {
       "title": "Repli sur soi",
       "mechanic": {
-          "description": "Alice rejoint le centre et retourne la tuile centrale face cachée ; si elle y était déjà, elle se déplace de <span class='number'>1</span> tuile.",
-          "movement": {
-              "bool": true,
-              "number":1
-          }
+        "description": "Alice rejoint le centre et retourne la tuile centrale face cachée ; si elle y était déjà, elle se déplace de <span class='number'>1</span> tuile.",
+        "movement": 1
       },
       "description": "Frey, Vulbis, Afstir… À quoi bon retenir ces noms quand la solitude est si simple."
     },
     {
       "title": "Déliquescence",
       "mechanic": {
-          "description": "Pour cette manche, une nouvelle option s'ajoute à vos choix de tour : retourner une tuile et en poser une",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
+        "description": "Pour cette manche, une nouvelle option s'ajoute à vos choix de tour : retourner une tuile et en poser une",
+        "movement": 0
       },
       "description": "Sous l’œil épuisé d’Alice, le paysage de Wonder fond en une masse uniforme et grise. Un automne du monde et de l’âme."
     },
@@ -189,55 +144,40 @@
     {
       "title": "Mouvement de panique",
       "mechanic": {
-          "description": "Alice se déplace <span class='number'>3</span> fois, puis placez une nouvelle tuile sous elle ; le joueur le plus faible choisit l’orientation de cette tuile.",
-          "movement": {
-              "bool": true,
-              "number":3
-          }
+        "description": "Alice se déplace <span class='number'>3</span> fois, puis placez une nouvelle tuile sous elle ; le joueur le plus faible choisit l’orientation de cette tuile.",
+        "movement": 3
       },
       "description": "Et si un autre cataclysme attendait là, tapi dans la brume nébuleuse du Destin ? Voilà une pensée qui gardera Alice en alerte."
     },
     {
       "title": "Peur de la séparation",
       "mechanic": {
-          "description": "Alice se déplace <span class='number'>1</span> fois en emportant la tuile qui se trouve sous elle.",
-          "movement": {
-              "bool": true,
-              "number":1
-          }
+        "description": "Alice se déplace <span class='number'>1</span> fois en emportant la tuile qui se trouve sous elle.",
+        "movement": 1
       },
       "description": "Peut-elle seulement s’empêcher de les poursuivre ? Cette course est à sens unique pour Alice."
     },
     {
       "title": "Avalanche de possibles",
       "mechanic": {
-          "description": "Avant de piocher, chaque joueur a l'option de remélanger les tuiles d'un emplacement de la réserve pour cette manche.",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
+        "description": "Avant de piocher, chaque joueur a l'option de remélanger les tuiles d'un emplacement de la réserve pour cette manche.",
+        "movement": 0
       },
       "description": "Peut-être faudrait-il s’hâter de retrouver Frey, ou bien se concentrer sur sa nouvelle œuvre ou alors est-ce dans le vaste Extérieur qu’Alice devrait trouver une voie ?"
     },
     {
       "title": "Indécision nerveuse",
       "mechanic": {
-          "description": "Alice se déplace <span class='number'>2</span> fois ; elle détruit sa tuile d’arrivée, que le joueur le plus faible doit ensuite replacer.",
-          "movement": {
-              "bool": true,
-              "number":2
-          }
+        "description": "Alice se déplace <span class='number'>2</span> fois ; elle détruit sa tuile d’arrivée, que le joueur le plus faible doit ensuite replacer.",
+        "movement": 2
       },
       "description": "Choisir revient à renoncer. Alors, Alice tisse et détisse, inlassablement, jusqu’à ce que sa dernière œuvre soit là où elle doit être."
     },
     {
       "title": "Sursaut",
       "mechanic": {
-          "description": "Dans l'ordre du tour, chaque joueur doit piocher une tuile au hasard et la poser immédiatement.",
-          "movement": {
-              "bool": false,
-              "number":0
-          }
+        "description": "Dans l'ordre du tour, chaque joueur doit piocher une tuile au hasard et la poser immédiatement.",
+        "movement": 0
       },
       "description": "Le perfectionnisme est l’obstacle de tout artiste. Mais Alice n’a plus ce luxe, son œuvre est sa vie."
     },
