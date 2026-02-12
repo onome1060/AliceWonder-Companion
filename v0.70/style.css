@@ -1,0 +1,469 @@
+/* =========================================
+   RESET GLOBAL
+   ========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* =========================================
+   FONTS
+   ========================================= */
+@font-face {
+  font-family: "Hellghost Rough";
+  src: url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/974927adf453da2b7246dca35d6f21a4.svg#Hellghost Rough") format("svg");
+}
+
+/* =========================================
+   VARIABLES & DESIGN TOKENS
+   ========================================= */
+:root {
+  --bg-dark: #0e0e0e;
+  --text-main-color: #eee;
+
+  --emotion-neutral: #ffffff;
+  --emotion-rage: #ff2020;
+  --emotion-extase: #ffa81d;
+  --emotion-melancolie: #4a65ff;
+  --emotion-angoisse: #58ea70;
+
+  --font-family-h1: "Hellghost Rough", serif;
+  --font-family-h2: "IM Fell English SC", serif;
+  --font-family-body: "IM Fell English", serif;
+  --font-family-uitxt: "IM Fell English", serif;
+
+  --font-size-h2: 2.4rem;
+  --font-size-body: 1.2rem;
+  --font-size-ui-helper: 1rem;
+
+  --transition-fast: 0.2s ease;
+}
+/* =========================================
+   BASE LAYOUT
+   ========================================= */
+body {
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark);
+  color: var(--text-main-color);
+}
+
+.game-container {
+  width: 100%;
+  height: 100%;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* utilitaire */
+.hidden { display: none !important; }
+.is_rage {
+  color: var(--emotion-rage);
+}
+.is_angoisse {
+  color: var(--emotion-angoisse);
+}
+.is_melancolie{
+  color: var(--emotion-melancolie);
+}
+.is_extase{
+  color: var(--emotion-extase);
+}
+/* =========================================
+   SCREEN BASE
+   ========================================= */
+.game .screen {
+  background: var(--bg-dark);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr 100px;
+  grid-template-areas:
+    "header"
+    "content"
+    "btn-footer";
+  min-height: 100dvh;
+  touch-action: manipulation;
+}
+
+.dynamic-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* =========================================
+   TYPOGRAPHIE
+   ========================================= */
+h1, .game-title { font-family: var(--font-family-h1); font-size: 2.5rem; }
+h2, .screen-title { font-family: var(--font-family-h2); font-size: 1.8rem; }
+h3 { font-family: var(--font-family-h2); font-size: 1.6rem; }
+
+.number {
+  font-family: var(--font-family-h2);
+  font-size: 1.6em;
+  line-height: 0;
+}
+
+.narrative-note {
+  font-family: var(--font-family-body);
+  font-style: italic;
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  color: var(--text-main-color);
+  opacity: 0.8;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.game button {
+  background: none;
+  /* border: none; */
+  padding: 0;
+  margin: 0;
+
+  font-family: var(--font-family-h2);
+  font-weight: 800;
+  font-size: 1.2rem;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: var(--transition-fast);
+  color: var(--text-main-color);
+}
+
+.btn-primary,
+.btn-select-count {
+  width: auto;
+  display: inline-block;
+  background: transparent;
+  font-size: 1.3rem;
+  border: 20px solid;
+  border-image: url("assets/box.png") 33% round;
+}
+
+.btn-primary:active { transform: scale(0.98); filter: brightness(1.2); }
+
+/* =========================================
+   HOME SCREEN
+   ========================================= */
+.home-screen-menu { grid-area: btn-footer; display: flex; justify-content: center; align-items: center; }
+.cover-bg { grid-area: content; position: relative; height: 100%; z-index: 100; }
+.cover-bg-item { position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
+
+/* =========================================
+   PLAYER COUNT
+   ========================================= */
+.btn-select-title {
+  grid-area: header;
+  height: 100px;
+  text-align: center; 
+  align-content: end;
+  line-height: 1em;
+  opacity: 0.8; 
+  font-weight: 400; 
+}
+.btn-select-container { 
+  grid-area: content;
+  align-self: center;
+  height: 200px;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* =========================================
+   SETUP EMOTIONS
+   ========================================= */
+.setup-emotion-title { 
+  grid-area: header; 
+  height: 100px;
+  text-align: center; 
+  align-content: end;
+  line-height: 1em;
+  opacity: 0.8; 
+  font-weight: 400; 
+}
+.setup-list { grid-area: content; height: 100%; display: flex; flex-direction: column; justify-content: space-around; }
+.btn-container { grid-area: btn-footer; display: flex; justify-content: center; align-items: center; }
+
+.setup-emotions-screen {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
+  min-height: 100dvh;
+}
+
+.player-setup-row { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.player-setup-number { 
+  height: 1.6em; 
+}
+.section-split-bar { height: 10px; }
+
+.emotion-choices {
+  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.emotion-choice-card { transition: var(--transition-fast); }
+.emotion-choice-card img { width: 100%; max-width: 64px; }
+.emotion-choice-card.selected { transform: scale(1.2); }
+.emotion-choice-card.disabled { opacity: 0.1; }
+
+@media (max-width: 380px) {
+  .player-setup-number {
+    font-size: 1.3rem;
+  }
+  .emotion-choice-card img {
+    max-width: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .player-setup-number {
+    font-size: 1.6rem;
+  }
+  .emotion-choice-card img {
+    max-width: 72px;
+  }
+}
+
+
+/* =========================================
+   ROUND SCREEN
+   ========================================= */
+.screen.round-screen{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 1fr 8fr 100px;
+  /* grid-template-rows: 1fr 4fr 8fr 100px; */
+  grid-template-areas: "eye" "header" "content" "btn-footer";
+  /* grid-template-areas: "header" "eye"  "content" "btn-footer"; */
+  height: 100dvh;
+  width: 100%;
+}
+.eye-mechanic { grid-area: eye; }
+.round-header { 
+  grid-area: header; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+.dynamic-area { 
+  grid-area: content; 
+}
+.btn-main-container { 
+  grid-area: btn-footer; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100%; }
+
+.first-player-info { 
+  margin-bottom: 8px; 
+  color: #eeeeee9b; 
+  opacity: .6; 
+}
+.first-player-info p { 
+  text-align: center; 
+  line-height: 80%; 
+}
+
+.round-title { line-height: 1; font-size: 2.6rem; }
+
+/* =========================================
+   EYE (stable + fullscreen class)
+   ========================================= */
+.eye-mechanic {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: auto;
+}
+
+.eye-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#eye-base { z-index: 1; }
+#eye-color-overlay { z-index: 2; }
+#eye-pupils-layer { z-index: 3; }
+
+.pupil-rune {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pupil-rune img { width: 100%; height: 100%; object-fit: contain; }
+
+/* Fullscreen state for eye during roulette */
+.eye-fullscreen {
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  z-index: 9999;
+  margin: 0;
+  will-change: transform, filter;
+}
+
+/* =========================================
+   SCORES STEPPERS
+   ========================================= */
+.score-inputs-container {
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  row-gap: 1%; */
+  height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.score-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: fit-content;
+}
+
+.rune-badge-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.rune-image-place img { 
+  width: 4.5rem; 
+  height: 4.5rem; 
+  opacity: 0.95; }
+
+.score-badge {
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  font-family: var(--font-family-h2);
+  color: var(--text-main-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 2px 2px 2px rgba(0, 0, 0, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.arrow-button {
+  border: none;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-button img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform-origin: center center;
+}
+@media (max-width: 767px) {
+  .rune-image-place img{
+    width: 6rem;
+    height: 6rem;
+  }
+}
+@media (max-width: 380px) {
+  .rune-image-place img{
+    width: 4rem;
+    height: 4rem;
+  }
+}
+/* =========================================
+   EVENTS CARD
+   ========================================= */
+.event-result-box { width: 80%; }
+.event-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.event-title { margin-bottom: 2rem; font-family: var(--font-family-h2); font-size: 2.4rem; font-weight: 800; line-height: 2rem; }
+.event-description { margin-bottom: 1.5rem; }
+.event-mechanics { margin-top: 1.5rem; font-family: var(--font-family-uitxt); font-size: var(--font-size-body); text-align: center; font-weight: 100; }
+
+/* =========================================
+   MOVEMENT OVERLAY
+   ========================================= */
+.movement-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 14, 14, 1);
+  z-index: 9999;
+}
+
+.movement-content {
+  position: absolute;
+  inset: 0;
+  background: #0e0e0e;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 5fr 2fr;
+  grid-template-areas: "header" "ui-txt" "compass" "steps-left";
+}
+
+.screen-title { grid-area: header; display: flex; justify-content: center; align-items: center; }
+.compass-ui-text { grid-area: ui-txt; font-family: var(--font-family-uitxt); font-size: var(--font-size-ui-helper); }
+.compass-container { grid-area: compass; position: relative; justify-self: center; height: 100%; width: 100%; }
+.movement-steps-left { grid-area: steps-left; font-family: var(--font-family-h2); font-size: 1.4rem; line-height: 1.4rem; }
+
+.compass-move,
+.compass-direction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+@media (max-width: 767px) {
+  .round-title { font-size: 2rem; }
+  .eye-mechanic { width: 150px; height: 150px; }
+  .event-title { margin-bottom: 1.4rem; font-size: 1.8rem; line-height: 1.4rem; }
+}

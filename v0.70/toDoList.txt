@@ -1,0 +1,6 @@
+- réparer les score-stepper -> badge 
+	un transform origin déplace le texte, je suppose qu'il vient de mes 	animations GSAP, mais je ne trouves pas
+- adapter les score stepper en responsive
+	icone 4.5rem
+	score 3.5rem
+	button 3rem

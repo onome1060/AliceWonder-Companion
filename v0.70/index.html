@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Alice's Wonder - Compagnon</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main class="game-container game">
+
+    <!-- HOME -->
+    <section id="home-screen" class="screen home-screen">
+      <div class="home-screen-menu">
+        <button id="btn-new-game" class="btn-primary btn-new-game">Nouvelle Partie</button>
+      </div>
+      <div class="cover-bg">
+        <img src="assets/cover-bg-eye.png" alt="" class="cover-bg-item bg-eye">
+        <img src="assets/cover-bg-Alice.png" class="cover-bg-item bg-alice">
+        <img src="assets/cover-bg-rage.png" alt="" class="cover-bg-item bg-rage eye-idle">
+        <img src="assets/cover-bg-angoisse.png" alt="" class="cover-bg-item bg-angoisse eye-idle">
+        <img src="assets/cover-bg-extase.png" alt="" class="cover-bg-item bg-extase eye-idle">
+        <img src="assets/cover-bg-melancolie.png" alt="" class="cover-bg-item bg-melancolie eye-idle">
+        <img src="assets/cover-bg-title.png" alt="" class="cover-bg-item bg-title">
+      </div>
+    </section>
+
+    <!-- PLAYER COUNT -->
+    <section id="player-count-screen" class="screen player-count-screen hidden">
+      <h2 class="btn-select-title">Combien de joueurs<br>êtes vous ?</h2>
+      <div class="btn-select-container">
+        <button class="btn-select-count" data-count="3"><span class="number">3</span> Joueurs</button>
+        <button class="btn-select-count" data-count="4"><span class="number">4</span> Joueurs</button>
+      </div>
+    </section>
+
+    <!-- SETUP EMOTIONS -->
+    <section id="setup-emotions-screen" class="screen setup-emotions-screen hidden">
+      <h2 class="setup-emotion-title">Quelle émotion<br>incarnerez-vous ?</h2>
+      <div id="players-setup-list" class="setup-list"></div>
+      <div class="btn-container">
+        <button id="btn-start-game" class="btn-primary btn-start-game">Commencer la Partie</button>
+      </div>
+    </section>
+
+    <!-- ROUND -->
+    <section id="round-screen" class="screen round-screen hidden">
+
+      <div id="main-eye-container" class="eye-mechanic eye-container">
+        <img id="eye-base" src="assets/eye.png" class="eye-layer" alt="Oeil Neutre">
+        <img id="eye-color-overlay" src="" class="eye-layer" alt="" style="opacity: 0;">
+        <div id="eye-pupils-layer" class="eye-layer">
+          <div class="pupil-rune neutral" id="pupil-neutral">
+            <img src="assets/eye-pupil_neutre.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="round-header">
+        <div id="first-player-info" class="first-player-info narrative-note"></div>
+        <h2 id="round-title" class="round-title">Manche <span class="number">1</span></h2>
+      </div>
+
+      <div id="dynamic-content-zone" class="dynamic-area"></div>
+
+      <div class="btn-main-container">
+        <button id="btn-switch-display" class="btn-primary">switch display</button>
+        <button id="btn-main-action" class="btn-primary">Valider les scores</button>
+      </div>
+    </section>
+
+    <!-- VICTORY -->
+    <section id="victory-screen" class="screen hidden">
+      <h1 class="game-title">Podium Final</h1>
+      <div id="classement-final" class="podium-list"></div>
+      <button id="btn-restart" class="btn-primary">Rejouer</button>
+    </section>
+  </main>
+
+  <template id="stepper-template">
+    <div class="score-stepper">
+      <button class="arrow-button btn-minus">
+        <img src="assets/btn-minus__default.png" class="img-minus-default" alt="-">
+        <img src="assets/btn-minus__active.png" class="img-minus-active" alt="-" style="opacity: 0;">
+      </button>
+      <div class="rune-badge-container">
+        <div class="rune-image-place"></div>
+        <div class="score-badge">0</div>
+      </div>
+      <button class="arrow-button btn-plus">
+        <img src="assets/btn-plus__default.png" class="img-plus-default" alt="+">
+        <img src="assets/btn-plus__active.png" class="img-plus-active" alt="+" style="opacity: 0;">
+      </button>
+    </div>
+  </template>
+
+</body>
+</html>
